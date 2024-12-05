@@ -7,8 +7,10 @@
     "index.js"
   ],
   "scripts": {
-    "test": "mocha test.js",
-    "lint": "eslint . --ext .js"
+    "build": "tsc",
+    "prepublishOnly": "npm run build",
+    "test": "mocha dist/test.js",
+    "lint": "eslint src --ext .ts"
   },
   "keywords": [
     "twilio",
@@ -36,7 +38,9 @@
     "url": "https://github.com/jremi/twilio-media-stream-save-audio-file"
   },
   "devDependencies": {
+    "@types/node": "^22.10.1",
     "eslint": "^8.42.0",
-    "mocha": "^10.2.0"
+    "mocha": "^10.2.0",
+    "typescript": "^5.7.2"
   }
 }
